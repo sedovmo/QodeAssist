@@ -1,7 +1,6 @@
 name: Build plugin
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -39,6 +38,12 @@ jobs:
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux-x64",
             os: ubuntu-latest,
+            platform: linux_x64,
+            cc: "gcc", cxx: "g++"
+          }
+          {
+            name: "Ubuntu 22.04 GCC", artifact: "Linux-x64(Ubuntu-22.04-experimental)",
+            os: ubuntu-22.04,
             platform: linux_x64,
             cc: "gcc", cxx: "g++"
           }
